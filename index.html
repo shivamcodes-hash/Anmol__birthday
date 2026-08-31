@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Anmol 🎂</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    font-family:Arial,sans-serif;
+    text-align:center;
+    color:white;
+    background:
+    radial-gradient(circle at top,#69379a,#25123f 45%,#08050d);
+    overflow-x:hidden;
+}
+
+.container{
+    width:90%;
+    max-width:700px;
+    margin:40px auto;
+    padding:35px 22px;
+    border-radius:30px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,.2);
+    box-shadow:0 0 40px rgba(190,110,255,.3);
+}
+
+.photo{
+    width:190px;
+    height:190px;
+    object-fit:cover;
+    border-radius:50%;
+    border:4px solid #d8a4ff;
+    box-shadow:0 0 30px #b66cff;
+    margin-bottom:20px;
+}
+
+h1{
+    font-size:43px;
+    color:#ecd7ff;
+    text-shadow:0 0 20px #c77dff;
+}
+
+.name{
+    font-size:36px;
+    font-weight:bold;
+    margin:10px 0 25px;
+    color:#fff;
+}
+
+.message{
+    font-size:18px;
+    line-height:1.8;
+    color:#eee;
+}
+
+.countdown{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+    margin:25px 0;
+}
+
+.box{
+    min-width:75px;
+    padding:12px;
+    border-radius:16px;
+    background:rgba(255,255,255,.1);
+}
+
+.number{
+    font-size:25px;
+    color:#e3c3ff;
+    font-weight:bold;
+}
+
+.label{
+    font-size:11px;
+    color:#ddd;
+}
+
+.party{
+    margin-top:50px;
+    padding-top:30px;
+    border-top:1px solid rgba(255,255,255,.2);
+}
+
+.party h2{
+    font-size:28px;
+    color:#e5c5ff;
+    margin-bottom:25px;
+}
+
+.btn{
+    border:none;
+    padding:14px 30px;
+    border-radius:30px;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+    margin:8px;
+}
+
+.yes{
+    background:#c98cff;
+    color:#180b27;
+    box-shadow:0 0 20px #b66cff;
+}
+
+.no{
+    background:#333;
+    color:white;
+    position:relative;
+}
+
+#result{
+    margin-top:25px;
+    font-size:21px;
+    color:#e8cfff;
+    display:none;
+}
+
+.music{
+    position:fixed;
+    top:15px;
+    right:15px;
+    border:none;
+    border-radius:25px;
+    padding:10px 16px;
+    background:#c98cff;
+    font-weight:bold;
+}
+
+.firework{
+    position:fixed;
+    font-size:25px;
+    animation:twinkle 2s infinite alternate;
+}
+
+.f1{top:12%;left:10%;}
+.f2{top:20%;right:10%;}
+.f3{bottom:15%;left:12%;}
+.f4{bottom:20%;right:12%;}
+
+@keyframes twinkle{
+    from{
+        opacity:.2;
+        transform:scale(.7);
+    }
+    to{
+        opacity:1;
+        transform:scale(1.3);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<audio id="music" loop>
+    <source src="birthday.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music" onclick="toggleMusic()" id="musicBtn">
+🎵 MUSIC
+</button>
+
+<div class="firework f1">✨🎆</div>
+<div class="firework f2">🎇✨</div>
+<div class="firework f3">✨🎆</div>
+<div class="firework f4">🎇✨</div>
+
+
+<div class="container">
+
+    <!-- ANMOL PHOTO -->
+    <img src="anmol.jpg" class="photo" alt="Anmol">
+
+    <h1>Happy Birthday 🎂</h1>
+
+    <div class="name">
+        ANMOL 💜🥁
+    </div>
+
+    <div class="countdown">
+
+        <div class="box">
+            <div class="number" id="days">00</div>
+            <div class="label">DAYS</div>
+        </div>
+
+        <div class="box">
+            <div class="number" id="hours">00</div>
+            <div class="label">HOURS</div>
+        </div>
+
+        <div class="box">
+            <div class="number" id="minutes">00</div>
+            <div class="label">MINUTES</div>
+        </div>
+
+        <div class="box">
+            <div class="number" id="seconds">00</div>
+            <div class="label">SECONDS</div>
+        </div>
+
+    </div>
+
+
+    <div class="message">
+
+        Wishing you a very Happy Birthday, Anmol! 🥳💜<br><br>
+
+        May your life always be filled with happiness,
+        success, laughter and unforgettable memories. ✨<br><br>
+
+        Keep smiling, keep shining and keep creating
+        those amazing tabla beats! 🥁🎶🔥<br><br>
+
+        May every new chapter of your life have
+        its own beautiful rhythm. 💫
+
+    </div>
+
+
+    <!-- PARTY QUESTION -->
+
+    <div class="party">
+
+        <h2>
+            Ab ek important sawaal hai... 👀
+        </h2>
+
+        <h2>
+            Party milegi ya nahi? 😏🎂
+        </h2>
+
+        <button class="btn yes" onclick="yesParty()">
+            YES 😎🎉
+        </button>
+
+        <button class="btn no" id="noBtn"
+        onmouseover="moveNo()"
+        onclick="moveNo()">
+            NO 😂
+        </button>
+
+        <div id="result"></div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* COUNTDOWN */
+
+function updateCountdown(){
+
+    const now = new Date();
+
+    let year = now.getFullYear();
+
+    let birthday = new Date(
+        year,8,1,0,0,0
+    );
+
+    if(now > birthday){
+        birthday = new Date(
+            year+1,8,1,0,0,0
+        );
+    }
+
+    const difference = birthday-now;
+
+    const days =
+        Math.floor(difference/(1000*60*60*24));
+
+    const hours =
+        Math.floor(
+            (difference/(1000*60*60))%24
+        );
+
+    const minutes =
+        Math.floor(
+            (difference/(1000*60))%60
+        );
+
+    const seconds =
+        Math.floor(
+            (difference/1000)%60
+        );
+
+    document.getElementById("days").innerText =
+        String(days).padStart(2,"0");
+
+    document.getElementById("hours").innerText =
+        String(hours).padStart(2,"0");
+
+    document.getElementById("minutes").innerText =
+        String(minutes).padStart(2,"0");
+
+    document.getElementById("seconds").innerText =
+        String(seconds).padStart(2,"0");
+}
+
+setInterval(updateCountdown,1000);
+updateCountdown();
+
+
+/* NO BUTTON IDHAR UDHAR */
+
+function moveNo(){
+
+    const button =
+        document.getElementById("noBtn");
+
+    const maxX =
+        window.innerWidth - button.offsetWidth - 20;
+
+    const maxY =
+        window.innerHeight - button.offsetHeight - 20;
+
+    const x =
+        Math.random()*maxX;
+
+    const y =
+        Math.random()*maxY;
+
+    button.style.position="fixed";
+    button.style.left=x+"px";
+    button.style.top=y+"px";
+}
+
+
+/* YES BUTTON */
+
+function yesParty(){
+
+    const result =
+        document.getElementById("result");
+
+    result.style.display="block";
+
+    result.innerHTML =
+        "LESSSGOOO! 🎉😂<br><br>" +
+        "Anmol ki taraf se party confirmed! 🥳🥁🎂";
+}
+
+
+/* MUSIC */
+
+const music =
+    document.getElementById("music");
+
+const musicBtn =
+    document.getElementById("musicBtn");
+
+function toggleMusic(){
+
+    if(music.paused){
+
+        music.play()
+        .then(()=>{
+            musicBtn.innerHTML="🔊 MUSIC ON";
+        })
+        .catch(()=>{
+            alert(
+            "birthday.mp3 ko same folder mein rakho 🎵"
+            );
+        });
+
+    }else{
+
+        music.pause();
+        musicBtn.innerHTML="🎵 MUSIC";
+
+    }
+}
+
+</script>
+
+</body>
+</html>
